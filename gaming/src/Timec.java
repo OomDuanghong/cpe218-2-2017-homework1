@@ -7,18 +7,21 @@ import java.io.IOException;
 /**
  * Created by HP on 13/12/2559.
  */
+
 public class Timec {
 
-    BufferedImage zero = ImageIO.read(new File("C://pic//time//zero.png"));
-    BufferedImage one = ImageIO.read(new File("C://pic//time//one.png"));
-    BufferedImage two = ImageIO.read(new File("C://pic//time//two.png"));
-    BufferedImage three = ImageIO.read(new File("C://pic//time//three.png"));
-    BufferedImage four = ImageIO.read(new File("C://pic//time//four.png"));
-    BufferedImage five = ImageIO.read(new File("C://pic//time//five.png"));
-    BufferedImage six = ImageIO.read(new File("C://pic//time//six.png"));
-    BufferedImage seven = ImageIO.read(new File("C://pic//time//seven.png"));
-    BufferedImage eight = ImageIO.read(new File("C://pic//time//eight.png"));
-    BufferedImage nine = ImageIO.read(new File("C://pic//time//nine.png"));
+    BufferedImage zero = ImageIO.read(new File("Pic//Time//zero.png"));
+    BufferedImage one = ImageIO.read(new File("Pic//Time//one.png"));
+    BufferedImage two = ImageIO.read(new File("Pic//Time//two.png"));
+    BufferedImage three = ImageIO.read(new File("Pic//Time//three.png"));
+    BufferedImage four = ImageIO.read(new File("Pic//Time//four.png"));
+    BufferedImage five = ImageIO.read(new File("Pic//Time//five.png"));
+    BufferedImage six = ImageIO.read(new File("Pic//Time//six.png"));
+    BufferedImage seven = ImageIO.read(new File("Pic//Time//seven.png"));
+    BufferedImage eight = ImageIO.read(new File("Pic//Time//eight.png"));
+    BufferedImage nine = ImageIO.read(new File("Pic//Time//nine.png"));
+    BufferedImage BG = ImageIO.read(new File("Pic//Time//bgtime.png"));
+    BufferedImage SP = ImageIO.read(new File("Pic//Time//spot.png"));
 
     Icon zeroim = new ImageIcon(zero);
     Icon oneim = new ImageIcon(one);
@@ -30,10 +33,15 @@ public class Timec {
     Icon sevenim = new ImageIcon(seven);
     Icon eightim = new ImageIcon(eight);
     Icon nineim = new ImageIcon(nine);
+    Icon BGim = new ImageIcon(BG);
+    Icon SPim = new ImageIcon(SP);
 
     JButton sec1 = new JButton();
     JButton sec2 = new JButton();
     JButton min = new JButton();
+    JButton BGT = new JButton(BGim);
+    JButton SPT = new JButton(SPim);
+    JButton Fzero = new JButton(zeroim);
 
     private int x,y;
 
@@ -53,32 +61,59 @@ public class Timec {
         sec2.setIcon(zeroim);
         min.setIcon(zeroim);
 
+        BGT.setVisible(true);
+        BGT.setOpaque(false);
+        BGT.setContentAreaFilled(false);
+        BGT.setFocusPainted(false);
+        BGT.setBorder(BorderFactory.createEmptyBorder());
+        BGT.setBounds(x,y,BG.getWidth(),BG.getHeight());
+        lp.add(BGT,new Integer(3));
+
+        SPT.setVisible(true);
+        SPT.setOpaque(false);
+        SPT.setContentAreaFilled(false);
+        SPT.setFocusPainted(false);
+        SPT.setBorder(BorderFactory.createEmptyBorder());
+        SPT.setBounds(x+zero.getWidth()*2,y,SP.getWidth(),SP.getHeight());
+        lp.add(SPT,new Integer(4));
+
         sec1.setVisible(true);
         sec1.setOpaque(false);
         sec1.setContentAreaFilled(false);
         sec1.setFocusPainted(false);
         sec1.setBorder(BorderFactory.createEmptyBorder());
-        sec1.setBounds(x+(zero.getWidth()*2),y,zero.getWidth(),zero.getHeight());
-        lp.add(sec1,new Integer(3));
+        sec1.setBounds(x+(zero.getWidth()*3)+SP.getWidth(),y,zero.getWidth(),zero.getHeight());
+        lp.add(sec1,new Integer(4));
 
         sec2.setVisible(true);
         sec2.setOpaque(false);
         sec2.setContentAreaFilled(false);
         sec2.setFocusPainted(false);
         sec2.setBorder(BorderFactory.createEmptyBorder());
-        sec2.setBounds(x+zero.getWidth(),y,zero.getWidth(),zero.getHeight());
-        lp.add(sec2,new Integer(3));
+        sec2.setBounds(x+zero.getWidth()*2+SP.getWidth(),y,zero.getWidth(),zero.getHeight());
+        lp.add(sec2,new Integer(4));
+
+        Fzero.setVisible(true);
+        Fzero.setOpaque(false);
+        Fzero.setContentAreaFilled(false);
+        Fzero.setFocusPainted(false);
+        Fzero.setBorder(BorderFactory.createEmptyBorder());
+        Fzero.setBounds(x,y,SP.getWidth(),SP.getHeight());
+        lp.add(Fzero,new Integer(4));
 
         min.setVisible(true);
         min.setOpaque(false);
         min.setContentAreaFilled(false);
         min.setFocusPainted(false);
         min.setBorder(BorderFactory.createEmptyBorder());
-        min.setBounds(x,y,zero.getWidth(),zero.getHeight());
-        lp.add(min,new Integer(3));
+        min.setBounds(x+Fzero.getWidth(),y,zero.getWidth(),zero.getHeight());
+        lp.add(min,new Integer(4));
+
+
     }
 
     public void countTime(JLayeredPane lp,int m,int s2,int s1){
+
         if(s1==0){
             sec1.setIcon(zeroim);
         }else if(s1==1){
@@ -144,6 +179,5 @@ public class Timec {
         }if(m==9){
             min.setIcon(nineim);
         }
-
     }
 }
