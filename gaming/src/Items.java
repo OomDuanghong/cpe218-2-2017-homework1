@@ -12,7 +12,7 @@ public class Items extends JComponent{
 
     BufferedImage picmesseges = ImageIO.read(new File("C://pic//room1//messeges.png"));
     JButton botton = new JButton(new ImageIcon(picmesseges));
-    int x,y;
+    private int x,y;
 
     Items() throws IOException {
     }

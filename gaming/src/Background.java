@@ -63,4 +63,5 @@ public class Background extends JFrame {
         layeredPane.add(panel1, new Integer(1));
     }
 
+
 }
