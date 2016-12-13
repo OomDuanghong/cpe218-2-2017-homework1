@@ -21,7 +21,7 @@ public class main {
         Background frame = new Background();
         frame.setVisible(true);
         state = 0;
-        int time = 100;
+        int time = 70;
 
         Items i1 = new Items();
         Items2 i2 = new Items2();
@@ -35,7 +35,7 @@ public class main {
 
         while(state == 0 && time > 0){
             tc.timeCall(frame.layeredPane);
-            tc.countTime(frame.layeredPane,2,2,3);
+            tc.countTime(frame.layeredPane,(time/60),(time/10)-4,time%10);
             TimeUnit.SECONDS.sleep(1);
             time--;
             System.out.println("time : " + time);
