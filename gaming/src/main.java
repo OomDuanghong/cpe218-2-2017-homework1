@@ -25,6 +25,7 @@ public class main {
 
         Items i1 = new Items();
         Items2 i2 = new Items2();
+        Timec tc = new Timec();
 
         i1.setxy(580,330);
         i1.ItemCall(frame.layeredPane);
@@ -33,6 +34,8 @@ public class main {
         i2.ItemCall(frame.layeredPane);
 
         while(state == 0 && time > 0){
+            tc.timeCall(frame.layeredPane);
+            tc.countTime(frame.layeredPane,2,2,3);
             TimeUnit.SECONDS.sleep(1);
             time--;
             System.out.println("time : " + time);
