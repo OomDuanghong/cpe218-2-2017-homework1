@@ -1,8 +1,18 @@
+import sun.audio.AudioStream;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import sun.audio.*;
+import java.applet.Applet;
+import java.applet.AudioClip;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * Created by HP on 13/12/2559.
@@ -67,7 +77,7 @@ public class Timec {
         BGT.setFocusPainted(false);
         BGT.setBorder(BorderFactory.createEmptyBorder());
         BGT.setBounds(x,y,BG.getWidth(),BG.getHeight());
-        lp.add(BGT,new Integer(3));
+        lp.add(BGT,new Integer(9));
 
         SPT.setVisible(true);
         SPT.setOpaque(false);
@@ -75,7 +85,7 @@ public class Timec {
         SPT.setFocusPainted(false);
         SPT.setBorder(BorderFactory.createEmptyBorder());
         SPT.setBounds(x+zero.getWidth()*2,y,SP.getWidth(),SP.getHeight());
-        lp.add(SPT,new Integer(4));
+        lp.add(SPT,new Integer(10));
 
         sec1.setVisible(true);
         sec1.setOpaque(false);
@@ -83,7 +93,7 @@ public class Timec {
         sec1.setFocusPainted(false);
         sec1.setBorder(BorderFactory.createEmptyBorder());
         sec1.setBounds(x+(zero.getWidth()*3)+SP.getWidth(),y,zero.getWidth(),zero.getHeight());
-        lp.add(sec1,new Integer(4));
+        lp.add(sec1,new Integer(10));
 
         sec2.setVisible(true);
         sec2.setOpaque(false);
@@ -91,7 +101,7 @@ public class Timec {
         sec2.setFocusPainted(false);
         sec2.setBorder(BorderFactory.createEmptyBorder());
         sec2.setBounds(x+zero.getWidth()*2+SP.getWidth(),y,zero.getWidth(),zero.getHeight());
-        lp.add(sec2,new Integer(4));
+        lp.add(sec2,new Integer(10));
 
         Fzero.setVisible(true);
         Fzero.setOpaque(false);
@@ -99,7 +109,7 @@ public class Timec {
         Fzero.setFocusPainted(false);
         Fzero.setBorder(BorderFactory.createEmptyBorder());
         Fzero.setBounds(x,y,SP.getWidth(),SP.getHeight());
-        lp.add(Fzero,new Integer(4));
+        lp.add(Fzero,new Integer(10));
 
         min.setVisible(true);
         min.setOpaque(false);
@@ -107,7 +117,7 @@ public class Timec {
         min.setFocusPainted(false);
         min.setBorder(BorderFactory.createEmptyBorder());
         min.setBounds(x+Fzero.getWidth(),y,zero.getWidth(),zero.getHeight());
-        lp.add(min,new Integer(4));
+        lp.add(min,new Integer(10));
 
 
     }
