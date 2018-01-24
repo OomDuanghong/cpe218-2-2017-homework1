@@ -1,4 +1,3 @@
-
 public class CalculatorTestCase {
 	String question;
 	String answer;
